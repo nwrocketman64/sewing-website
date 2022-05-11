@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Sewing Website</title>
+    <link rel="stylesheet" href="{% static "main_site/css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "main_site/css/small.css" %}">
+    <link rel="stylesheet" href="{% static "main_site/css/medium.css" %}">
+    <link rel="stylesheet" href="{% static "main_site/css/large.css" %}">
+    <script src="{% static "main_site/js/menu.js" %}"></script>
+    {% block addons %}{% endblock %}
+</head>
+<body>
+    <div id="page">
+        <header>
+            <h1>{{ title }} - Sewing Website</h1>
+        </header>
+        <nav>
+            <ul class="navigation">
+                <li><a class="ham" href="#">&#9776; Menu</a></li>
+                <li><a {% if '/home' in path %} id="thePage" {% endif %} href="{% url "index-page" %}">Home</a></li>
+                <li><a {% if '/services' in path %} id="thePage" {% endif %} href="{% url "service-page" %}">Services</a></li>
+                <li><a {% if '/contact' in path %} id="thePage" {% endif %} href="{% url "contact-page" %}">Contact</a></li>
+                <li><a {% if '/projects' in path %} id="thePage" {% endif %} href="{% url "index-page" %}">Projects</a></li>
+                <li><a {% if '/about' in path %} id="thePage" {% endif %} href="{% url "about-page" %}">About</a></li>
+            </ul>
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <p>
+                This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. | <a href="https://github.com/nwrocketman64/sewing-website">GitHub</a> | <a href="/patch-notes">Patch Notes</a>
+                <br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png"></a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
