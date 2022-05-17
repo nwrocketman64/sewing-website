@@ -2,6 +2,26 @@
 
 {% block content %}
     <section>
-        <h2>Contact</h2>
+        <h2>Send Your Comments or Questions Here</h2>
+        <p>
+            If you have any comments or questions about this site, the
+            services that I provide or how to get them, or about the
+            projects that I do, please send it through this form. I will
+            do my best to get back to you as quickly as I can. Please
+            remember to fill out all the items in the form.
+        </p>
+        <div class="container">
+            <form action="/contact" method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                <div>
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
+                </div>
+                {% endfor %}
+                <div><button type="submit">Send Form</button></div>
+            </form>
+        </div>
     </section>
 {% endblock %}

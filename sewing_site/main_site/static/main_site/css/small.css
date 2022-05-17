@@ -101,6 +101,39 @@ main img {
     display: block;
 }
 
+/* Contact Form Page */
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    display: block;
+    padding: 10px;
+    width: 95%;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border: black 1px solid;
+}
+
+form button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #464646;
+    transition: all 0.33s ease 0s;
+}
+
+.errorlist {
+    color: red;
+}
+
 /* Code for the footer section of the page */
 footer {
     padding-left: 20px;
