@@ -101,6 +101,25 @@ main img {
     display: block;
 }
 
+.btn {
+    text-align: center;
+}
+
+.btn a {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f44336;
+    color: white;
+    max-width: 100px;
+    margin: 0 auto;
+    font-size: 1.5em;
+}
+
+.btn a:link, .btn a:visited {
+    text-decoration: none;
+    color: white;
+}
+
 /* Contact Form Page */
 form label {
     display: block;
@@ -132,6 +151,26 @@ form button:hover {
 
 .errorlist {
     color: red;
+}
+
+/* Code for the image list page */
+#project-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.project-item {
+    border: 3px solid black;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 8px 14px rgba(0,0,0,0.26);
+    padding: 10px;
+    text-align: center;
+}
+
+.project-item img {
+    border: 2px solid red;
+    border-radius: 15px 15px 15px 15px;
 }
 
 /* Code for the footer section of the page */

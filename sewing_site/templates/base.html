@@ -24,7 +24,7 @@
                 <li><a {% if '/home' in path %} id="thePage" {% endif %} href="{% url "index-page" %}">Home</a></li>
                 <li><a {% if '/services' in path %} id="thePage" {% endif %} href="{% url "service-page" %}">Services</a></li>
                 <li><a {% if '/contact' in path %} id="thePage" {% endif %} href="{% url "contact-page" %}">Contact</a></li>
-                <li><a {% if '/projects' in path %} id="thePage" {% endif %} href="{% url "index-page" %}">Projects</a></li>
+                <li><a {% if '/projects' in path %} id="thePage" {% endif %} href="{% url "project-list" %}">Projects</a></li>
                 <li><a {% if '/about' in path %} id="thePage" {% endif %} href="{% url "about-page" %}">About</a></li>
             </ul>
         </nav>

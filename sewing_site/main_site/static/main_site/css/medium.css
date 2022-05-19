@@ -33,4 +33,9 @@
         text-align: center;
         font-size: 1.6rem;
     }
+
+    /* Code for the project list page */
+    #project-list {
+        grid-template-columns: 1fr 1fr;
+    }
 }

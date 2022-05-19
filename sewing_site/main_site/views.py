@@ -1,9 +1,10 @@
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
+from django.views.generic import ListView
 
 # Import the needed classes from other files.
 from .forms import RequestForm
-from .models import Request
+from .models import Project, Request
 
 # Create your views here.
 
@@ -78,4 +79,34 @@ class AboutPage(TemplateView):
         context = super().get_context_data(**kwargs)
         context["title"] = "About Me"
         context["path"] = "/about"
+        return context
+        
+        
+class ProjectList(ListView):
+    """Project List
+    The class delivers the view of the list of projects.
+    """
+    # Set the template, model, order by last update.
+    template_name = "main_site/project-list.html"
+    model = Project
+    ordering = ["-last_update"]
+    context_object_name = "projects"
+
+    # Add the title and path to the page.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "List of Projects"
+        context["path"] = "/projects"
+        return context
+    
+    
+class ProjectDetail(TemplateView):
+    # Set the template.
+    template_name = "main_site/project-details.html"
+
+    # Add the title and path to the page.
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Project Details"
+        context["path"] = "/projects"
         return context
