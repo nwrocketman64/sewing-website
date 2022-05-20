@@ -3,6 +3,7 @@
 {% block content %}
     <section>
         <h2>Complete List of Projects</h2>
+        {% if projects|length %}
         <div id="project-list">
             {% for project in projects %}
             <div class="project-item">
@@ -12,5 +13,8 @@
             </div>
             {% endfor %}
         </div>
+        {% else %}
+        <p>There are no projects, yet.</p>
+        {% endif %}
     </section>
 {% endblock %}

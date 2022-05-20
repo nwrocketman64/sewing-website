@@ -7,7 +7,7 @@
     }
 
     /* Code for the image list page */
-    #image-list {
+    #project-list {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }

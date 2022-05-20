@@ -2,6 +2,11 @@
 
 {% block content %}
     <section>
-        <h2>Project Details</h2>
+        <h2>{{ project.title }}</h2>
+        <p>Last Updated: {{ project.last_update }}</p>
+        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+        <h3>Description</h3>
+        {{ project.description|linebreaks }}
+        <p class="btn"><a href="{{ project.external_url }}">Learn More</a></p>
     </section>
 {% endblock %}

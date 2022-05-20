@@ -1,6 +1,6 @@
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 # Import the needed classes from other files.
 from .forms import RequestForm
@@ -9,16 +9,30 @@ from .models import Project, Request
 # Create your views here.
 
 
-# The class delivers the home page.
 class IndexPage(TemplateView):
+    """ Index Page
+    The class returns the index page with the latest project.
+    """
     # Set the template.
     template_name = "main_site/index.html"
+
 
     # Add the title and path to the page.
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        
+        # Get the earliest project.
+        try:
+            projects = Project.objects.all().order_by("-last_update")
+            earliest_project = projects[0]
+        except:
+            # If failed, return blank.
+            earliest_project = []
+        
+        # Update and return the context.
         context["title"] = "Home"
         context["path"] = "/home"
+        context["project"] = earliest_project
         return context
 
 
@@ -26,6 +40,7 @@ class IndexPage(TemplateView):
 class ServicesPage(TemplateView):
     # Set the template.
     template_name = "main_site/services.html"
+
 
     # Add the title and path to the page.
     def get_context_data(self, **kwargs):
@@ -46,6 +61,7 @@ class ContactPage(CreateView):
     form_class = RequestForm
     success_url = "/contact-submitted"
 
+
     # Add the title and path to the page.
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -61,6 +77,7 @@ class ContactSubmitPage(TemplateView):
     # Set the template.
     template_name = "main_site/contact-submit.html"
 
+
     # Add the title and path to the page.
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -74,14 +91,15 @@ class AboutPage(TemplateView):
     # Set the template.
     template_name = "main_site/about.html"
 
+
     # Add the title and path to the page.
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = "About Me"
         context["path"] = "/about"
         return context
-        
-        
+
+
 class ProjectList(ListView):
     """Project List
     The class delivers the view of the list of projects.
@@ -92,17 +110,23 @@ class ProjectList(ListView):
     ordering = ["-last_update"]
     context_object_name = "projects"
 
+
     # Add the title and path to the page.
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = "List of Projects"
         context["path"] = "/projects"
         return context
-    
-    
-class ProjectDetail(TemplateView):
+
+
+class ProjectDetail(DetailView):
+    """ Project Detail
+    The class returns the project details page.
+    """
     # Set the template.
     template_name = "main_site/project-details.html"
+    model = Project
+
 
     # Add the title and path to the page.
     def get_context_data(self, **kwargs):
