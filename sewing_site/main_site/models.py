@@ -7,6 +7,31 @@ from PIL import Image
 # Create your models here.
 
 
+class Image(models.Model):
+    """Images
+    The class is a model for how the images of the projects are stored.
+    """
+    image_title = models.CharField(max_length=50)
+    date_created = models.DateTimeField(blank=True, null=True, editable=False)
+    image = models.ImageField(upload_to="images")
+
+    # The function defines how each image appears in admin.
+    def __str__(self):
+        return f"{self.image_title} - Uploaded on: {self.date_created.strftime('%A, %b %d, %Y - %I:%M %p')}"
+
+
+    # The function creates the slug and sets the last update.
+    def save(self, *args, **kwargs):
+        # Create datetime object and set it to now.
+        current_time = datetime.now()
+
+        # Set sent time to the current time.
+        self.date_created = current_time
+
+        # Save everything else.
+        super().save(*args, **kwargs)
+
+
 class Project(models.Model):
     """ Project
     The class is a model for how the projects are stored in a database.
@@ -17,7 +42,7 @@ class Project(models.Model):
     last_update = models.DateTimeField(blank=True, null=True, editable=False)
     slug = models.SlugField(default="", blank=True, editable=False,
                             null=False, db_index=True, unique=True)
-    image = models.ImageField(upload_to="images")
+    images = models.ManyToManyField(Image)
 
 
     # The function defines how each project appears in admin.

@@ -1,10 +1,15 @@
 from django.contrib import admin
 
-from .models import Project, Request
+# Import the needed models.
+from .models import Project, Request, Image
 
 # Register your models here.
 
+
 class RequestAdmin(admin.ModelAdmin):
+    """Request Admin
+    The class controls how Requests will appear in the admin.
+    """
     readonly_fields = (
         "first_name",
         "last_name",
@@ -13,5 +18,16 @@ class RequestAdmin(admin.ModelAdmin):
         "sent_time",
     )
 
+
+class ImageAdmin(admin.ModelAdmin):
+    """Image Admin
+    The class controls how images will appear in the admin field.
+    """
+    readonly_fields = (
+        "date_created",
+    )
+
+
 admin.site.register(Project)
 admin.site.register(Request, RequestAdmin)
+admin.site.register(Image, ImageAdmin)

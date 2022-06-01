@@ -7,7 +7,9 @@
         <div id="project-list">
             {% for project in projects %}
             <div class="project-item">
-                <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                {% with project.images.all|first as image %}
+                <img src="{{ image.image.url }}" alt="{{ image.image_title }}">
+                {% endwith %}
                 <p>{{ project.title }}</p>
                 <p class="btn"><a href="{% url "project-details" project.slug %}">More Details</a></p>
             </div>
