@@ -2,7 +2,7 @@ from datetime import datetime
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-from PIL import Image
+from PIL import Image as PILImage
 
 # Create your models here.
 
@@ -30,6 +30,17 @@ class Image(models.Model):
 
         # Save everything else.
         super().save(*args, **kwargs)
+
+        # Set the base width and height for the thumbnail of the image.
+        base_width = 850
+        base_height = 850
+
+        # Grab the image that was just saved.
+        img = PILImage.open(self.image.path)
+
+        # Resize the image that was just save and then save the image.
+        img.thumbnail((base_width, base_height), PILImage.LANCZOS)
+        img.save(self.image.path)
 
 
 class Project(models.Model):

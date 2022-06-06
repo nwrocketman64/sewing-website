@@ -28,6 +28,7 @@ class ImageAdmin(admin.ModelAdmin):
     )
 
 
+# Register all the models that need to appear in admin.
 admin.site.register(Project)
 admin.site.register(Request, RequestAdmin)
 admin.site.register(Image, ImageAdmin)

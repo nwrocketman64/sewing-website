@@ -11,8 +11,7 @@
 
 {% block content %}
     <section>
-        <h2>{{ project.title }}</h2>
-        <p>Last Updated: {{ project.last_update }}</p>
+        <p class="last-update">Last Updated: <time datetime="{{ project.last_update|date:'Y-m-d H:i' }}">{{ project.last_update }}</time></p>
         <div class="slide-container">
             {% for image in project.images.all %}
             <div class="slides fade">
@@ -25,6 +24,8 @@
         </div>
         <h3>Description</h3>
         {{ project.description|linebreaks }}
+        {% if project.external_url %}
         <p class="btn"><a href="{{ project.external_url }}">Learn More</a></p>
+        {% endif %}
     </section>
 {% endblock %}

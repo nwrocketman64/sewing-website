@@ -22,6 +22,10 @@ h2, h3, h4 {
     padding-bottom: 5px;
 }
 
+section {
+    padding-bottom: 20px;
+}
+
 /* Code for the header section of the page */
 header {
     padding: 20px;
@@ -101,6 +105,7 @@ main img {
     display: block;
 }
 
+/* Code for the red buttons */
 .btn {
     text-align: center;
 }
@@ -128,7 +133,7 @@ main img {
 }
 
 .slides img {
-    display: inline;
+    display: block;
 }
 
 .prev, .next {
@@ -144,6 +149,7 @@ main img {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    background-color: rgba(0, 0, 0, 0.2)
 }
 
 .next {
@@ -157,12 +163,14 @@ main img {
 
 .text {
     color: #f2f2f2;
-    font-size: 15px;
+    font-size: 20px;
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;
     width: 100%;
     text-align: center;
+    font-weight: bold;
+    -webkit-text-stroke: 0.5px black;
 }
 
 .fade {
@@ -175,7 +183,15 @@ main img {
     to {opacity: 1}
 }
 
-/* Contact Form Page */
+/* Code for the Home Page */
+.project-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 15px;
+}
+
+/* Code for the Contact Form Page */
 form label {
     display: block;
     margin-top: 10px;
@@ -213,6 +229,7 @@ form button:hover {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
+    align-items: center;
 }
 
 .project-item {
@@ -226,6 +243,12 @@ form button:hover {
 .project-item img {
     border: 2px solid red;
     border-radius: 15px 15px 15px 15px;
+}
+
+/* Code for the Project Detail Page */
+.last-update {
+    color: grey;
+    font-size: 0.7rem;
 }
 
 /* Code for the footer section of the page */
