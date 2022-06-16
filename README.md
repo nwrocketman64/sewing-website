@@ -53,7 +53,7 @@ testing and development.
 Some of the key Python libraries that I used for this website.
 
 * [Django](https://www.djangoproject.com/) - The main web framework that powers the website.
-* [Python Imaging Library or PIL] - I used this to resize the images when they are uploaded.
+* [Python Imaging Library or PIL](https://python-pillow.org/) - I used this to resize the images when they are uploaded.
 * [django-environ](https://django-environ.readthedocs.io/en/latest/) - Used to load the enviroment variables.
 * [Normalize.css](https://necolas.github.io/normalize.css/) - The CSS normalizer that I use for the website.
 
