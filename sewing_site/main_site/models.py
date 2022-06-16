@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
@@ -17,7 +17,12 @@ class Image(models.Model):
 
     # The function defines how each image appears in admin.
     def __str__(self):
-        return f"{self.image_title} - Uploaded on: {self.date_created.strftime('%A, %b %d, %Y - %I:%M %p')}"
+        # Create timezone for Arizona.
+        sgtTimeDelta = timedelta(hours=-7)
+        sgtTZObject = timezone(sgtTimeDelta, name="SGT")
+
+        # Return the string of the object.
+        return f"{self.image_title} - Uploaded on: {self.date_created.astimezone(sgtTZObject).strftime('%A, %b %d, %Y - %I:%M %p')}"
 
 
     # The function creates the slug and sets the last update.
@@ -32,8 +37,8 @@ class Image(models.Model):
         super().save(*args, **kwargs)
 
         # Set the base width and height for the thumbnail of the image.
-        base_width = 850
-        base_height = 850
+        base_width = 700
+        base_height = 700
 
         # Grab the image that was just saved.
         img = PILImage.open(self.image.path)
@@ -58,7 +63,12 @@ class Project(models.Model):
 
     # The function defines how each project appears in admin.
     def __str__(self):
-        return f"{self.title} - Last Updated: {self.last_update.strftime('%A, %b %d, %Y - %I:%M %p')}"
+        # Create timezone for Arizona.
+        sgtTimeDelta = timedelta(hours=-7)
+        sgtTZObject = timezone(sgtTimeDelta, name="SGT")
+
+        # Return the string of the object.
+        return f"{self.title} - Last Updated: {self.last_update.astimezone(sgtTZObject).strftime('%A, %b %d, %Y - %I:%M %p')}"
 
 
     # The function creates the slug and sets the last update.
@@ -89,7 +99,12 @@ class Request(models.Model):
 
     # The function defines how each request appears in admin.
     def __str__(self):
-        return f"{self.first_name} {self.last_name} on {self.sent_time.strftime('%A, %b %d, %Y - %I:%M %p')}"
+        # Create timezone for Arizona.
+        sgtTimeDelta = timedelta(hours=-7)
+        sgtTZObject = timezone(sgtTimeDelta, name="SGT")
+
+        # Return the string of the object.
+        return f"{self.first_name} {self.last_name} on {self.sent_time.astimezone(sgtTZObject).strftime('%A, %b %d, %Y - %I:%M %p')}"
 
 
     # The function saves sent_time as the current time the request was

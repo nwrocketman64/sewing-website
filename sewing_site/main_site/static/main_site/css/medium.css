@@ -38,4 +38,9 @@
     #project-list {
         grid-template-columns: 1fr 1fr;
     }
+
+    /* Code for the image slides */
+    .slide-container {
+        max-width: 75%;
+    }
 }

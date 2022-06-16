@@ -1,5 +1,5 @@
 /* Code that affects the whole page */
-*.
+*,
 *::after,
 *::before {
     box-sizing: inherit;
@@ -14,7 +14,7 @@ body {
 #page {
     max-width: 95%;
     margin: 0 auto;
-    line-height: 1.4rem;
+    line-height: 1.8rem;
 }
 
 h2, h3, h4 {
@@ -35,7 +35,15 @@ header {
     border-right: lightgrey solid 5px;
     margin-top: 20px;
     border-radius: 15px 15px 0px 0px;
-    line-height: 2rem
+    line-height: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    display: block;
 }
 
 /* Code for the main menu of the page */
@@ -264,8 +272,16 @@ footer {
     margin-bottom: 20px;
 }
 
-footer p {
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border-top: black solid 1px;
-    font-size: 0.5rem;
+    gap: 20px;
+}
+
+footer p {
+    font-size: 1.3rem;
     text-align: center;
 }

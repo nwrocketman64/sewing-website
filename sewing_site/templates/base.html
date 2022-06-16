@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="{% static "main_site/css/small.css" %}">
     <link rel="stylesheet" href="{% static "main_site/css/medium.css" %}">
     <link rel="stylesheet" href="{% static "main_site/css/large.css" %}">
+    <link rel="shortcut icon" type="image/png" href="{% static "main_site/img/favicon.png" %}">
     <script src="{% static "main_site/js/menu.js" %}"></script>
     {% block addons %}{% endblock %}
 </head>
 <body>
     <div id="page">
         <header>
+            <img src="{% static "main_site/img/favicon.png" %}" alt="Logo">
             <h1>{% block sub-title %}{{ title }}{% endblock %} - Sewing Website</h1>
         </header>
         <nav>
@@ -32,10 +34,10 @@
             {% block content %}{% endblock %}
         </main>
         <footer>
-            <p>
-                This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. | <a href="https://github.com/nwrocketman64/sewing-website">GitHub</a> | <a href="/patch-notes">Patch Notes</a>
-                <br><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png"></a>
-            </p>
+            <div class="footer-content">
+                <p>&copy;2022 | Sewing Website</p>
+                <a href="https://www.etsy.com/your/shops/JKWWoodWorks/onboarding/listings?ref=hdr-mcpa"><img src="{% static "main_site/img/etsy-custom-tmb.png" %}" alt="Etsy Page" width="50" height="50"></a>
+            </div>
         </footer>
     </div>
     {% block addLoad %}{% endblock %}
