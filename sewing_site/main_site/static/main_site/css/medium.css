@@ -1,6 +1,11 @@
 /* Tablet Size Viewports */
 @media only screen and (min-width: 37em) {
 
+    /* Code for the whole page */
+    .frame-img img {
+        max-width: 90%;
+    }
+
     /* Code for the header */
     header {
         text-align: center;
@@ -42,5 +47,23 @@
     /* Code for the image slides */
     .slide-container {
         max-width: 75%;
+    }
+
+    /* Code for the about page */
+    .about-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .para-right {
+        grid-column: 2 / span 2;
+    }
+
+    .img-left {
+        grid-row: 2 / span 2;
+    }
+
+    /* Code for the service page */
+    .img-center img {
+        max-width: 60%;
     }
 }

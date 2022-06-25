@@ -1,7 +1,32 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
     <section>
         <h2>Services Offered</h2>
+        <ul>
+            <li>Custom Designer Bags</li>
+            <li>Custom Gifts</li>
+            <li>Lining Coffins</li>
+            <li>Alterations (locally)*</li>
+            <li>Teaching Sewing (locally)*</li>
+        </ul>
+        <div class="frame-img img-center">
+            <img src="{% static "main_site/img/item1.jpg" %}" alt="Fabric Cover">
+        </div>
+        <p>
+            If you are interested in buying any of the items
+            shown on this website or using any of the services
+            that are listed, please feel free to
+            <a href="{% url "contact-page" %}">contact me</a>
+            through the website.
+        </p>
+        <p>
+            *Some services are only offered locally. You have
+            to live on the Southeast side of the state of
+            Arizona in order to use those services that are
+            offered.
+        </p>
     </section>
 {% endblock %}

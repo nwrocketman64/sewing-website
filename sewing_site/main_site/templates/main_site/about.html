@@ -1,7 +1,32 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
     <section>
-        <h2>About</h2>
+        <h2>About Me</h2>
+        <div class="about-grid">
+            <p>
+                My artwork is using fabric, textiles, and tiles to
+                decorate and beautify the world around me.
+            </p>
+            <div class="frame-img">
+                <img src="{% static "main_site/img/item5.jpg" %}" alt="A Handbag">
+            </div>
+            <p class="para-right">
+                As a professional seamstress for 30 years, it was
+                always reqarding to make people feel good and look
+                good in their clothes. Now this love of creating
+                and fixing has transformed into useful gifts and
+                decorations.
+            </p>
+            <div class="frame-img img-left">
+                <img src="{% static "main_site/img/item4.jpg" %}" alt="Mini-Bags">
+            </div>
+        </div>
+        <h3>Credit and Sources</h3>
+        <p>
+            Background made by Mungujakisa Edmond.
+        </p>
     </section>
 {% endblock %}

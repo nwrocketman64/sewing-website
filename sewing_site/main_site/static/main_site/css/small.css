@@ -7,7 +7,10 @@
 
 body {
     background-color: #EEE;
-    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("/static/main_site/img/background1.png");
+    background-attachment: fixed;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-size: larger;
 }
 
@@ -26,6 +29,11 @@ section {
     padding-bottom: 20px;
 }
 
+.frame-img img{
+    box-shadow: 10px 10px 5px lightgray;
+    max-width: 50%;
+}
+
 /* Code for the header section of the page */
 header {
     padding: 20px;
@@ -35,7 +43,7 @@ header {
     border-right: lightgrey solid 5px;
     margin-top: 20px;
     border-radius: 15px 15px 0px 0px;
-    line-height: 2rem;
+    line-height: 2.5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -257,6 +265,15 @@ form button:hover {
 .last-update {
     color: grey;
     font-size: 0.7rem;
+}
+
+/* Code for the about page */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Code for the footer section of the page */
