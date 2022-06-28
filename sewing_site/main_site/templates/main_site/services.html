@@ -2,9 +2,20 @@
 
 {% load static %}
 
+{% block addons %}
+    <meta name="description" content="These are some of the services that I offer as a seamstress. To get quote on any of the services that you need or want, please contact me on the contact page.">
+    <meta name="author" content="Webb's Crafting Gallery Team">
+{% endblock %}
+
 {% block content %}
     <section>
         <h2>Services Offered</h2>
+        <p>
+            These are some of the services that I offer as a
+            seamstress. To get quote on any of the services that
+            you need or want, please contact me on the
+            <a href="{% url "contact-page" %}">contact page</a>.
+        </p>
         <ul>
             <li>Custom Designer Bags</li>
             <li>Custom Gifts</li>
@@ -13,7 +24,7 @@
             <li>Teaching Sewing (locally)*</li>
         </ul>
         <div class="frame-img img-center">
-            <img src="{% static "main_site/img/item1.jpg" %}" alt="Fabric Cover">
+            <img src="{% static "main_site/img/item1-tmb.jpg" %}" alt="Fabric Cover">
         </div>
         <p>
             If you are interested in buying any of the items

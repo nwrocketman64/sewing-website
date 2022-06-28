@@ -2,6 +2,11 @@
 
 {% load static %}
 
+{% block addons %}
+    <meta name="description" content="{{ project.title }} - {{ project.description|safe|striptags|slice:":255" }}">
+    <meta name="author" content="Webb's Crafting Gallery Team">
+{% endblock %}
+
 {% block addLoad %}
     <script src="{% static "main_site/js/slides_show.js" %}"></script>
 {% endblock %}

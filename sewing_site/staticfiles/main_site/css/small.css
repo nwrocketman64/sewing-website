@@ -1,0 +1,304 @@
+/* Code that affects the whole page */
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #EEE;
+    background-image: url("/static/main_site/img/background1.png");
+    background-attachment: fixed;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+#page {
+    max-width: 95%;
+    margin: 0 auto;
+    line-height: 1.8rem;
+}
+
+h2, h3, h4 {
+    border-bottom: black solid 1px;
+    padding-bottom: 5px;
+}
+
+section {
+    padding-bottom: 20px;
+}
+
+.frame-img img{
+    box-shadow: 10px 10px 5px lightgray;
+    max-width: 50%;
+}
+
+/* Code for the header section of the page */
+header {
+    padding: 20px;
+    background-color: white;
+    border-top: lightgrey solid 5px;
+    border-left: lightgrey solid 5px;
+    border-right: lightgrey solid 5px;
+    margin-top: 20px;
+    border-radius: 15px 15px 0px 0px;
+    line-height: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+header img {
+    display: block;
+}
+
+/* Code for the main menu of the page */
+nav {
+    background-color: #333;
+    overflow: hidden;
+    border-bottom: lightgrey solid 5px;
+    border-left: lightgrey solid 5px;
+    border-right: lightgrey solid 5px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li:first-child {
+    display: block;
+}
+
+nav ul li {
+    display: none;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+nav ul li a:hover {
+    color: white;
+    background-color: black;
+    transition: all 0.63s ease 0s;
+}
+
+#thePage {
+    font-weight: bold;
+    color: gold;
+}
+
+.responsive li {
+    display: block;
+}
+
+/* Code for the main section of the page */
+main {
+    padding: 20px;
+    padding-bottom: 0px;
+    background-color: white;
+    border-top: lightgrey solid 5px;
+    border-left: lightgrey solid 5px;
+    border-right: lightgrey solid 5px;
+    margin-top: 20px;
+    border-radius: 15px 15px 0px 0px;
+    margin-bottom: -20px;
+}
+
+main img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Code for the red buttons */
+.btn {
+    text-align: center;
+}
+
+.btn a {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f44336;
+    color: white;
+    max-width: 100px;
+    margin: 0 auto;
+    font-size: 1.5em;
+}
+
+.btn a:link, .btn a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+/* Code for the image slides */
+.slide-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.slides img {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    -webkit-text-stroke: 0.5px black;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+/* Code for the Home Page */
+.project-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 15px;
+}
+
+/* Code for the Contact Form Page */
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    display: block;
+    padding: 10px;
+    width: 95%;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border: black 1px solid;
+}
+
+form button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #464646;
+    transition: all 0.33s ease 0s;
+}
+
+.errorlist {
+    color: red;
+}
+
+/* Code for the image list page */
+#project-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.project-item {
+    border: 3px solid black;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0 8px 14px rgba(0,0,0,0.26);
+    padding: 10px;
+    text-align: center;
+}
+
+.project-item img {
+    border: 2px solid red;
+    border-radius: 15px 15px 15px 15px;
+}
+
+/* Code for the Project Detail Page */
+.last-update {
+    color: grey;
+    font-size: 0.7rem;
+}
+
+/* Code for the about page */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Code for the footer section of the page */
+footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    background-color: white;
+    border-bottom: lightgrey solid 5px;
+    border-left: lightgrey solid 5px;
+    border-right: lightgrey solid 5px;
+    border-radius: 0px 0px 15px 15px;
+    margin-bottom: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-top: black solid 1px;
+    gap: 20px;
+}
+
+footer p {
+    font-size: 1.3rem;
+    text-align: center;
+}
