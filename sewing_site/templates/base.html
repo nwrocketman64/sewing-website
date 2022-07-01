@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block main-title %}{{ title }}{% endblock %} - Webb's Crafting Gallery</title>
+    <title>{% block main-title %}{{ title }} - Webb's Crafting Gallery{% endblock %}</title>
     <link rel="stylesheet" href="{% static "main_site/css/normalize.css" %}">
     <link rel="stylesheet" href="{% static "main_site/css/small.css" %}">
     <link rel="stylesheet" href="{% static "main_site/css/medium.css" %}">
@@ -21,7 +21,7 @@
     <div id="page">
         <header>
             <a href="{% url "index-page" %}"><img src="{% static "main_site/img/favicon.png" %}" alt="Logo"></a>
-            <h1>{% block sub-title %}{{ title }}{% endblock %} - Webb's Crafting Gallery</h1>
+            <h1>{% block sub-title %}{{ title }} - Webb's Crafting Gallery{% endblock %}</h1>
         </header>
         <nav>
             <ul class="navigation">

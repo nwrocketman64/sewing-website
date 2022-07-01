@@ -15,7 +15,7 @@ function showSlides(n) {
     let slides = document.getElementsByClassName("slides");
 
     // Check to see if there are images to show.
-    if (typeof(slides) != "undefined"){
+    if (slides.length > 0){
         // If the index is greater than the slide length, loop it back.
         if (n > slides.length) {
             slideIndex = 1;

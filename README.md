@@ -60,8 +60,13 @@ Some of the key Python libraries that I used for this website.
 # Useful Websites
 This Udemy course is were I first learned to use Python Django.
 
-[Python Django - The Practical Guide
-](https://www.udemy.com/share/104wQs3@1bRZKG7_5UNHtevDwosC4eWZpqtrUvGa3nxuJJabAWCRZwypeSWaMlcIr1qO-duONw==/)
+[Python Django - The Practical Guide](https://www.udemy.com/share/104wQs3@1bRZKG7_5UNHtevDwosC4eWZpqtrUvGa3nxuJJabAWCRZwypeSWaMlcIr1qO-duONw==/)
+
+# Change Log
+* 1.1.0 - Fixed issues with headers, added box shadow for images slides, fixed error from slide JavaScript file, updated home page header, updated about page.
+* 1.0.0 - Website Completed and first deployment. 6/28/2022
 
 # Website Link
-This is the link to active website deployed.
+This is the link to the deployed website.
+
+[Webb's Crafting Gallery](https://www.webbcraftinggallery.com/)
