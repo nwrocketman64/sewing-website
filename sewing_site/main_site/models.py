@@ -1,8 +1,7 @@
 from datetime import datetime, timezone, timedelta
 from django.db import models
-from django.urls import reverse
 from django.utils.text import slugify
-from PIL import Image as PILImage
+from PIL import Image as PILImage, ImageOps
 
 # Create your models here.
 
@@ -41,7 +40,10 @@ class Image(models.Model):
         base_height = 700
 
         # Grab the image that was just saved.
-        img = PILImage.open(self.image.path)
+        img_data = PILImage.open(self.image.path)
+
+        # Use exif_transpose to maintain image EXIF metadata.
+        img = ImageOps.exif_transpose(img_data)
 
         # Resize the image that was just save and then save the image.
         img.thumbnail((base_width, base_height), PILImage.LANCZOS)
