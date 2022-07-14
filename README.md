@@ -63,6 +63,7 @@ This Udemy course is were I first learned to use Python Django.
 [Python Django - The Practical Guide](https://www.udemy.com/share/104wQs3@1bRZKG7_5UNHtevDwosC4eWZpqtrUvGa3nxuJJabAWCRZwypeSWaMlcIr1qO-duONw==/)
 
 # Change Log
+* 1.1.2 - Updated the Home, Services, and About page. 7/14/2022
 * 1.1.1 - Fixed issues with images not having EXIF metadate being saved correctly, Fixed issue with slide container not having the correct box shadow. 7/6/2022
 * 1.1.0 - Fixed issues with headers, added box shadow for images slides, fixed error from slide JavaScript file, updated home page header, updated about page. 7/1/2022
 * 1.0.0 - Website Completed and first deployment. 6/28/2022
