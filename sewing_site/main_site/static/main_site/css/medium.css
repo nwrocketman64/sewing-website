@@ -67,8 +67,8 @@
     }
 
     /* Code for the service page */
-    .img-center img {
-        max-width: 60%;
+    .img-center {
+        grid-template-columns: 1fr 1fr;
     }
 
     /* Code for the footer */

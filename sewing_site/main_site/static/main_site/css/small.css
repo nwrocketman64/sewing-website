@@ -212,6 +212,17 @@ main img {
     padding: 15px;
 }
 
+/* Code for the Services Page */
+.img-center {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.img-center img {
+    max-width: 90%;
+}
+
 /* Code for the Contact Form Page */
 form label {
     display: block;
