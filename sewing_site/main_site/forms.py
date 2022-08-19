@@ -1,4 +1,6 @@
 from django import forms
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV2Checkbox
 
 from .models import Request
 
@@ -7,6 +9,9 @@ class RequestForm(forms.ModelForm):
     """Request Form
     The class defines the form that appears in the contact page.
     """
+    # Make sure to add a ReCaptcha field.
+    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox(), label="Captcha*")
+
     class Meta:
         # Define the model the form is based off of.
         model = Request

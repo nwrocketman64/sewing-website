@@ -43,6 +43,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'main_site',
+    'captcha',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -142,6 +143,11 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = BASE_DIR / "bucket"
 MEDIA_URL = "/media/"
+
+
+# RECAPTCHA Settings
+RECAPTCHA_PUBLIC_KEY = env('RECAP_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = env('RECAP_PRIVATE_KEY')
 
 
 # Default primary key field type
