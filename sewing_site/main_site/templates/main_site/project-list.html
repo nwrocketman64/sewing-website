@@ -13,9 +13,9 @@
             {% for project in projects %}
             <div class="project-item">
                 {% with project.images.all|first as image %}
-                <img src="{{ image.image.url }}" alt="{{ image.image_title }}">
+                <img src="{{ image.image.url }}" alt="{{ image.image_title|title }}">
                 {% endwith %}
-                <p>{{ project.title }}</p>
+                <p>{{ project.title|title }}</p>
                 <p class="btn"><a href="{% url "project-details" project.slug %}">More Details</a></p>
             </div>
             {% endfor %}

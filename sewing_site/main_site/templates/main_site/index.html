@@ -21,14 +21,14 @@
         <div class="slide-container">
             {% for image in project.images.all %}
             <div class="slides fade">
-                <img src="{{ image.image.url }}" alt="{{ image.image_title }}">
-                <div class="text fade">{{ image.image_title }}</div>
+                <img src="{{ image.image.url }}" alt="{{ image.image_title|title }}">
+                <div class="text fade">{{ image.image_title|title }}</div>
             </div>
             {% endfor %}
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-        <p class="project-title">{{ project.title }}</p>
+        <p class="project-title">{{ project.title|title }}</p>
         <p class="btn"><a href="{% url "project-details" project.slug %}">See More Details</a></p>
     </section>
     {% endif %}
@@ -45,12 +45,19 @@
         </p>
     </section>
     <section>
-        <h2>Site Navigation</h2>
-        <ul>
-            <li><a href="{% url "service-page" %}">Services</a>: A list of all the services that I offer.</li>
-            <li><a href="{% url "contact-page" %}">Contact</a>: If you have questions about a project or if you are in need of services, come here to get a hold of me.</li>
-            <li><a href="{% url "project-list" %}">Projects</a>: Here is the list of projects that I've completed. Some of them can be purchased on Etsy or other websites.</li>
-            <li><a href="{% url "about-page" %}">About</a>: More information about me.</li>
-        </ul>
+        <h2>Services</h2>
+        <p style="text-align: center;">
+            Come see the services that I offer as a seamstress.
+        </p>
+        <p class="btn"><a href="{% url "service-page" %}">Services</a></p>
+    </section>
+    <section>
+        <h2>Contact</h2>
+        <p style="text-align: center;">
+            If you have questions / comments or if you need some of the
+            services that I provide as a seamstress, you can use the
+            contact form.
+        </p>
+        <p class="btn"><a href="{% url "contact-page" %}">Contact</a></p>
     </section>
 {% endblock %}

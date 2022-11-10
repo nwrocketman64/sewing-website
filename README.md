@@ -64,6 +64,7 @@ This Udemy course is were I first learned to use Python Django.
 [Python Django - The Practical Guide](https://www.udemy.com/share/104wQs3@1bRZKG7_5UNHtevDwosC4eWZpqtrUvGa3nxuJJabAWCRZwypeSWaMlcIr1qO-duONw==/)
 
 # Change Log
+* 1.1.5 - Update the home page, change the appearance of the button, updated the packages to Django 4.1.3. 11/10/2022
 * 1.1.4 - Compressed CSS files. Updated packages to Django 4.1.2. 10/22/2022
 * 1.1.3 - Updated packages to Django 4.1, implemented Google's ReCaptcha to reduce Bots and Spam on the Contact Form page. 8/19/2022
 * 1.1.2 - Updated the Home, Services, and About page. 7/14/2022
