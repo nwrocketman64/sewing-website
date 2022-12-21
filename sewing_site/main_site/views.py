@@ -86,8 +86,10 @@ class ContactSubmitPage(TemplateView):
         return context
 
 
-# The class delivers the about me page.
 class AboutPage(TemplateView):
+    """About Page
+    The class delivers the view of the about page.
+    """
     # Set the template.
     template_name = "main_site/about.html"
 
@@ -109,6 +111,7 @@ class ProjectList(ListView):
     model = Project
     ordering = ["-last_update"]
     context_object_name = "projects"
+    paginate_by = 6
 
 
     # Add the title and path to the page.

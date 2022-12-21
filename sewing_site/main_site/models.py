@@ -13,6 +13,7 @@ class Image(models.Model):
     image_title = models.CharField(max_length=50)
     date_created = models.DateTimeField(blank=True, null=True, editable=False)
     image = models.ImageField(upload_to="images")
+    # priority = models.PositiveIntegerField(blank=False, default=1, null=False)
 
     # The function defines how each image appears in admin.
     def __str__(self):
