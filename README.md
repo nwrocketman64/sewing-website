@@ -51,6 +51,7 @@ This Udemy course is were I first learned to use Python Django.
 * [Pagination](https://docs.djangoproject.com/en/4.1/topics/pagination/)
 
 # Change Log
+* 1.1.9 - Updated Python Django Packages. 4/3/2023
 * 1.1.8 - Prevent textarea in contact form from being resizeable. 2/16/2023
 * 1.1.7 - Removed label for ReCaptcha on the Contact Form page. 12/22/2022
 * 1.1.6 - Updated Project details page, Added paging to the Project list page. 12/21/2022
