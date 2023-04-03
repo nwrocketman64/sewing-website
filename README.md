@@ -4,7 +4,7 @@ This is the main codebase for the my a website that advertises sewing services a
 # Installing
 To install the website for running on your computer, you can clone the codebase either by using the GitHub website or through git. Once it is on your computer, to get the website running you must create an .env and place it in the second sewing_site folder where the settings.py file is located. You must have values set in the .env file for DEBUG_SET, SECRET_KEY, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, TIMEZONE, RECAP_PUBLIC_KEY, and RECAP_PRIVATE_KEY. You must also make sure that the latest version of Python is installed with an updated version of pip. Then, make sure that these packages are installed.
 ```
-pip3 install django pillow mysqlclient django-environ django-recaptcha mysqlclient
+pip3 install django pillow mysqlclient django-environ django-recaptcha
 ```
 Once it is done installing, make sure that you have a database server install on you computer
 such MariaDB or another SQL database. After that, you'll need to migrate the database using
