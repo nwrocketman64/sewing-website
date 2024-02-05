@@ -51,6 +51,7 @@ This Udemy course is were I first learned to use Python Django.
 * [Pagination](https://docs.djangoproject.com/en/4.1/topics/pagination/)
 
 # Change Log
+* 1.1.12 - Updated Django an other Python packages. 2/4/2023
 * 1.1.11 - Updated Django to current version. 9/9/2023
 * 1.1.10 - Added a venv so website could run on the current version of Ubuntu Server. 7/27/2023
 * 1.1.9 - Updated Python Django to version 4.2. 4/3/2023
