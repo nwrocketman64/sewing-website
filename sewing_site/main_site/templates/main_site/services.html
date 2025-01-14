@@ -3,41 +3,41 @@
 {% load static %}
 
 {% block addons %}
-    <meta name="description" content="These are some of the services that I offer as a seamstress. To get quote on any of the services that you need or want, please contact me on the contact page.">
-    <meta name="author" content="Webb's Crafting Gallery Team">
+<meta name="description" content="These are some of the services that I offer as a seamstress. To get quote on any of the services that you need or want, please contact me on the contact page.">
+<meta name="author" content="Webb's Crafting Gallery Team">
 {% endblock %}
 
 {% block content %}
-    <section>
-        <h2>Services Offered</h2>
-        <p>
-            These are some of the services that I offer as a
-            seamstress. To get quote on any of the services that
-            you need or want, please contact me on the
-            <a href="{% url "contact-page" %}">contact page</a>.
-        </p>
-        <ul>
-            <li>Custom Designer Bags</li>
-            <li>Custom Gifts</li>
-            <li>Lining Coffins</li>
-            <li>Alterations (locally)*</li>
-            <li>Teaching Sewing (locally)*</li>
-        </ul>
-        <div class="frame-img img-center">
-            <img src="{% static "main_site/img/item10-tmb.jpg" %}" alt="Lining Coffins">
-            <img src="{% static "main_site/img/item1-tmb.jpg" %}" alt="Fabric Cover">
-        </div>
-        <p>
-            If you are interested in buying any of the items
-            shown on this website or using any of the services
-            that are listed, please feel free to
-            <a href="{% url "contact-page" %}">contact me</a>
-            through the website.
-        </p>
-        <p>
-            *Some services are only offered locally. You have
-            to live on the Southeast side of the state of
-            Arizona in order to use those services.
-        </p>
-    </section>
+<section>
+    <h2>Services Offered</h2>
+    <p>
+        These are some of the services that I offer as a
+        seamstress. To get quote on any of the services that
+        you need or want, please contact me on the
+        <a href="{% url "contact-page" %}">contact page</a>.
+    </p>
+    <ul>
+        <li>Custom Designer Bags</li>
+        <li>Custom Gifts</li>
+        <li>Lining Coffins</li>
+        <li>Alterations (locally)*</li>
+        <li>Teaching Sewing (locally)*</li>
+    </ul>
+    <div class="frame-img img-center">
+        <img src="{% static "main_site/img/item10-tmb.jpg" %}" alt="Lining Coffins">
+        <img src="{% static "main_site/img/item1-tmb.jpg" %}" alt="Fabric Cover">
+    </div>
+    <p>
+        If you are interested in buying any of the items
+        shown on this website or using any of the services
+        that are listed, please feel free to
+        <a href="{% url "contact-page" %}">contact me</a>
+        through the website.
+    </p>
+    <p>
+        *Some services are only offered locally. You have
+        to live on the Southeast side of the state of
+        Arizona in order to use those services.
+    </p>
+</section>
 {% endblock %}

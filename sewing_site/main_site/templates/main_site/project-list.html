@@ -1,36 +1,36 @@
 {% extends "base.html" %}
 
 {% block addons %}
-    <meta name="description" content="This is the complete list of projects post on this website.">
-    <meta name="author" content="Webb's Crafting Gallery Team">
+<meta name="description" content="This is the complete list of projects post on this website.">
+<meta name="author" content="Webb's Crafting Gallery Team">
 {% endblock %}
 
 {% block content %}
-    <section>
-        <h2>Complete List of Projects</h2>
-        {% if projects|length %}
-        <div id="project-list">
-            {% for project in projects %}
-            <div class="project-item">
-                {% with project.images.all|first as image %}
-                <img src="{{ image.image.url }}" alt="{{ image.image_title|title }}">
-                {% endwith %}
-                <p>{{ project.title|title }}</p>
-                <p class="btn"><a href="{% url "project-details" project.slug %}">More Details</a></p>
-            </div>
-            {% endfor %}
+<section>
+    <h2>Complete List of Projects</h2>
+    {% if projects|length %}
+    <div id="project-list">
+        {% for project in projects %}
+        <div class="project-item">
+            {% with project.images.all|first as image %}
+            <img src="{{ image.image.url }}" alt="{{ image.image_title|title }}">
+            {% endwith %}
+            <p>{{ project.title|title }}</p>
+            <p class="btn"><a href="{% url "project-details" project.slug %}">More Details</a></p>
         </div>
-        <div class="pagination">
-            {% if page_obj.has_previous %}
-            <a class="left-button" href="?page={{ page_obj.previous_page_number }}">&lt;</a>
-            {% endif %}
-            <div class="current-page">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</div>
-            {% if page_obj.has_next %}
-            <a class="right-button" href="?page={{ page_obj.next_page_number }}">&gt;</a>
-            {% endif %}
-        </div>
-        {% else %}
-        <p>There are no projects, yet.</p>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+        <a class="left-button" href="?page={{ page_obj.previous_page_number }}">&lt;</a>
         {% endif %}
-    </section>
+        <div class="current-page">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</div>
+        {% if page_obj.has_next %}
+        <a class="right-button" href="?page={{ page_obj.next_page_number }}">&gt;</a>
+        {% endif %}
+    </div>
+    {% else %}
+    <p>There are no projects, yet.</p>
+    {% endif %}
+</section>
 {% endblock %}

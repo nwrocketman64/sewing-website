@@ -3,34 +3,34 @@
 {% load static %}
 
 {% block addons %}
-    <meta name="description" content="{{ project.title|title }} - {{ project.description|safe|striptags|slice:":255" }}">
-    <meta name="author" content="Webb's Crafting Gallery Team">
+<meta name="description" content="{{ project.title|title }} - {{ project.description|safe|striptags|slice:":255" }}">
+<meta name="author" content="Webb's Crafting Gallery Team">
 {% endblock %}
 
 {% block addLoad %}
-    <script src="{% static "main_site/js/slides_show.js" %}"></script>
+<script src="{% static "main_site/js/slides_show.js" %}"></script>
 {% endblock %}
 
 {% block main-title %}{{ project.title|title }} - Webb's Crafting Gallery{% endblock %}
 {% block sub-title %}{{ project.title|title }} - Webb's Crafting Gallery{% endblock %}
 
 {% block content %}
-    <section>
-        <p class="last-update">Last Updated: <time datetime="{{ project.last_update|date:'Y-m-d H:i' }}">{{ project.last_update }}</time></p>
-        <div class="slide-container">
-            {% for image in project.images.all %}
-            <div class="slides fade">
-                <img src="{{ image.image.url }}" alt="{{ image.image_title|title }}">
-                <div class="text">{{ image.image_title|title }}</div>
-            </div>
-            {% endfor %}
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+<section>
+    <p class="last-update">Last Updated: <time datetime="{{ project.last_update|date:'Y-m-d H:i' }}">{{ project.last_update }}</time></p>
+    <div class="slide-container">
+        {% for image in project.images.all %}
+        <div class="slides fade">
+            <img src="{{ image.image.url }}" alt="{{ image.image_title|title }}">
+            <div class="text">{{ image.image_title|title }}</div>
         </div>
-        <h3>Description</h3>
-        {{ project.description|linebreaks }}
-        {% if project.external_url %}
-        <p class="btn"><a href="{{ project.external_url }}">Buy Now</a></p>
-        {% endif %}
-    </section>
+        {% endfor %}
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <h3>Description</h3>
+    {{ project.description|linebreaks }}
+    {% if project.external_url %}
+    <p class="btn"><a href="{{ project.external_url }}">Buy Now</a></p>
+    {% endif %}
+</section>
 {% endblock %}

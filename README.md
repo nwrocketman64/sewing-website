@@ -51,6 +51,7 @@ This Udemy course is were I first learned to use Python Django.
 * [Pagination](https://docs.djangoproject.com/en/4.1/topics/pagination/)
 
 # Change Log
+* 1.2.0 - Updated Django, Added Django Cleanup, cleaned up code in model and template. 1/14/2025
 * 1.1.18 - Updated Django. 8/6/2024
 * 1.1.17 - Updated Django. 7/9/2024
 * 1.1.16 - Updated Django. 5/27/2024
