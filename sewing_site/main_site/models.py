@@ -3,7 +3,7 @@ from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
 from PIL import Image as PILImage, ImageOps
-import pytz
+from pytz import timezone
 
 # Create your models here.
 
@@ -20,10 +20,11 @@ class Image(models.Model):
     # The function defines how each image appears in admin.
     def __str__(self):
         # Convert from UTC time to the proper timezone.
-        timezone_time = self.date_created.now(pytz.timezone(settings.TIME_ZONE))
+        current_zone = timezone(settings.TIME_ZONE)
+        local_time = self.date_created.astimezone(current_zone)
 
         # Return the string of the object.
-        return f"{self.image_title} - Uploaded on: {timezone_time.strftime('%A, %b %d, %Y - %I:%M %p')}"
+        return f"{self.image_title} - Uploaded on: {local_time.strftime('%A, %b %d, %Y - %I:%M %p')}"
 
 
     # The function creates the slug and sets the last update.
@@ -65,10 +66,11 @@ class Project(models.Model):
     # The function defines how each project appears in admin.
     def __str__(self):
         # Convert from UTC time to the proper timezone.
-        timezone_time = self.last_update.now(pytz.timezone(settings.TIME_ZONE))
+        current_zone = timezone(settings.TIME_ZONE)
+        local_time = self.last_update.astimezone(current_zone)
 
         # Return the string of the object.
-        return f"{self.title} - Last Updated: {timezone_time.strftime('%A, %b %d, %Y - %I:%M %p')}"
+        return f"{self.title} - Last Updated: {local_time.strftime('%A, %b %d, %Y - %I:%M %p')}"
 
 
     # The function creates the slug and sets the last update.
@@ -97,10 +99,11 @@ class Request(models.Model):
     # The function defines how each request appears in admin.
     def __str__(self):
         # Convert from UTC time to the proper timezone.
-        timezone_time = self.sent_time.now(pytz.timezone(settings.TIME_ZONE))
+        current_zone = timezone(settings.TIME_ZONE)
+        local_time = self.sent_time.astimezone(current_zone)
 
         # Return the string of the object.
-        return f"{self.first_name} {self.last_name} on {timezone_time.strftime('%A, %b %d, %Y - %I:%M %p')}"
+        return f"{self.first_name} {self.last_name} on {local_time.strftime('%A, %b %d, %Y - %I:%M %p')}"
 
 
     # The function saves sent_time as the current time the request was
