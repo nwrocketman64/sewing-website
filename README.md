@@ -1,30 +1,65 @@
 # Overview
-This is the main codebase for the my a website that advertises sewing services as well blog / sell sewing projects. The codebase is mostly written in the Python programming language and I uses Django as the web framework. This website follows the MVC architecture for its overall structure. The website uses the built-in admin in order to add projects and images. This website is designed to used with the latest Python interpeter, which at the time is 3.10.5, although it can work with older interpeters. This website is also designed to work with the latest version of Django, which at the time is 4.05. I have made this website's codebase free and opensource under the Apache 2.0 license. Please feel free to copy and make your own changes and improvements and let me know if you find any issues with the codebase.
+This is the main codebase for Webb's Crafting Gallery, a website that advertises sewing services, hosts a blog, and sells sewing projects. The codebase is written in Python using Django as the web framework following the MVC architecture. The website uses Django's built-in admin interface to manage projects and images. It is designed to run on Python 3.10.5 or later and works with the latest version of Django. This codebase is free and open-source under the Apache 2.0 license. Please feel free to contribute improvements or report any issues you find.
 
 # Installing
-To install the website for running on your computer, you can clone the codebase either by using the GitHub website or through git. Once it is on your computer, to get the website running you must create an .env and place it in the second sewing_site folder where the settings.py file is located. You must have values set in the .env file for DEBUG_SET, SECRET_KEY, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, TIMEZONE, RECAP_PUBLIC_KEY, and RECAP_PRIVATE_KEY. You must also make sure that the latest version of Python is installed with an updated version of pip. Then, make sure that these packages are installed.
+To install the website for running on your computer, you can clone the codebase either by using the GitHub website or through git. Once it is on your computer, to get the website running you must create an `.env` file and place it in the second sewing_site folder where the settings.py file is located.
+
+## .env File Template
+Your `.env` file should include the following settings:
+
 ```
-pip3 install django pillow mysqlclient django-environ django-recaptcha
+DEBUG_SET=TRUE
+SECRET_KEY=
+DATABASE_NAME=
+DATABASE_USER=
+DATABASE_PASSWORD=
+DATABASE_HOST=localhost
+DATABASE_PORT=3306
+TIMEZONE=
+RECAP_PUBLIC_KEY=
+RECAP_PRIVATE_KEY=
+HTTPS=
 ```
-Once it is done installing, make sure that you have a database server install on you computer
-such MariaDB or another SQL database. After that, you'll need to migrate the database using
-these commands.
+Set `HTTPS=TRUE` when deploying to production to enable secure cookie settings and HSTS.
+
+Add all the database information, set the timezone, and set Debug to FALSE in production. Run this code in the Python shell to generate a secret key:
+```
+from django.core.management.utils import get_random_secret_key  
+print(get_random_secret_key())
+```
+
+## Installation Steps
+Make sure that the latest version of Python is installed with an updated version of pip. Then, install the required packages:
+
+```
+pip3 install django pillow mysqlclient django-environ django-recaptcha django-extensions django-cleanup django-csp
+```
+
+Once the packages are installed, make sure that you have a database server installed on your computer such as MariaDB or another SQL database. After that, you'll need to migrate the database using these commands:
+
 ```
 python manage.py makemigrations
 ```
 ```
 python manage.py migrate --run-syncdb
 ```
-Make sure that you include --run-syncdb otherwise the tables for the models won't be created.
-Then, make sure that you create a user for the admin although this isn't required to start
-the website. Only if you want to use the admin section.
+
+Make sure that you include `--run-syncdb` otherwise the tables for the models won't be created. Then, create a user for the admin although this isn't required to start the website. Only if you want to use the admin section:
+
 ```
 python manage.py createsuperuser
 ```
-After that, the website should be able to run and you can run it using this command.
+
+## Running the Website
+For development:
 ```
 python manage.py runserver
 ```
+For development with HTTPS (using django-extensions):
+```
+python manage.py runserver_plus --cert-file cert.pem --key-file key.pem
+```
+This will generate a self-signed certificate for local HTTPS testing.
 
 # Development Environment
 These are the tools that I used to help create this website.
@@ -43,6 +78,10 @@ Some of the key Python libraries that I used for this website.
 * [django-environ](https://django-environ.readthedocs.io/en/latest/) - Used to load the enviroment variables.
 * [django-recaptcha](https://github.com/torchbox/django-recaptcha) - Used to implement ReCaptcha for the contact form.
 * [Normalize.css](https://necolas.github.io/normalize.css/) - The CSS normalizer that I use for the website.
+* [django-csp](https://github.com/mozilla/django-csp) - Used to implement Content Security Policy for improved security.
+* [django-extensions](https://django-extensions.readthedocs.io/) - Provides additional management commands and development tools.
+* [django-cleanup](https://github.com/un1t/django-cleanup) - Automatically deletes files when models are deleted.
+* [django-crispy-forms](https://github.com/django-crispy-forms/django-crispy-forms) - Provides beautiful rendering of forms.
 
 # Useful Websites
 This Udemy course is were I first learned to use Python Django.
@@ -51,6 +90,7 @@ This Udemy course is were I first learned to use Python Django.
 * [Pagination](https://docs.djangoproject.com/en/4.1/topics/pagination/)
 
 # Change Log
+* 1.3.0 - Updated Django to 5.2, enabled HSTS and CSP. 4/3/2025
 * 1.2.1 - Updated Packages, fixed issue with models. 3/7/2025
 * 1.2.0 - Updated Django, Added Django Cleanup, cleaned up code in model and template. 1/14/2025
 * 1.1.18 - Updated Django. 8/6/2024

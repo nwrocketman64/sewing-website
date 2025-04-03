@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+sewing_site/cert.crt
+sewing_site/cert.key

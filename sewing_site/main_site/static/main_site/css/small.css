@@ -34,6 +34,11 @@ section {
     max-width: 50%;
 }
 
+/* Center text utility class */
+.center-text {
+    text-align: center;
+}
+
 /* Code for the header section of the page */
 header {
     padding: 20px;
